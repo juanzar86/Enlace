@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro Clínico</title>
+    <style>
+        body { font-family: sans-serif; margin: 20px; line-height: 1.4; }
+        .section { margin-bottom: 20px; padding: 15px; border: 1px solid #ddd; border-radius: 8px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+        th { background-color: #f4f4f4; }
+        input { width: 90%; padding: 5px; border: 1px solid #ddd; }
+        h3 { margin-top: 0; color: #333; }
+        .container { display: flex; gap: 20px; flex-wrap: wrap; }
+        textarea { width: 100%; height: 60px; padding: 10px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; }
+    </style>
+</head>
+<body>
+
+    <h2>Registro de Paciente</h2>
+    
+    <div class="section">
+        <strong>Nombre:</strong> <input type="text" id="nombre" style="width: 200px;">
+        <strong>Cuna:</strong> <input type="text" id="cuna" style="width: 100px;">
+    </div>
+
+    <div class="section">
+        <h3>Medicamentos</h3>
+        <table>
+            <thead>
+                <tr><th>Medicamento</th><th>Dosis</th><th>Vía</th></tr>
+            </thead>
+            <tbody>
+                <script>
+                    for(let i = 1; i <= 7; i++) {
+                        document.write(`<tr><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>`);
+                    }
+                </script>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section">
+        <h3>Infusiones</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>N°</th>
+                    <th>Detalle</th>
+                    <th>Pasaron (ml)</th>
+                    <th>Resta por pasar (ml)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <script>
+                    for(let i = 1; i <= 6; i++) {
+                        document.write(`<tr>
+                            <td>${i}</td>
+                            <td><input type="text"></td>
+                            <td><input type="number"></td>
+                            <td><input type="number"></td>
+                        </tr>`);
+                    }
+                </script>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section">
+        <h3>Dispositivos</h3>
+        <table>
+            <thead>
+                <tr><th>Dispositivo</th><th>Fecha Instalación</th><th>Fecha Curación</th></tr>
+            </thead>
+            <tbody>
+                <script>
+                    for(let i = 1; i <= 6; i++) {
+                        document.write(`<tr>
+                            <td><input type="text"></td>
+                            <td><input type="date"></td>
+                            <td><input type="date"></td>
+                        </tr>`);
+                    }
+                </script>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container">
+        <div class="section" style="flex: 1;">
+            <h3>Se recibe</h3>
+            <table>
+                <tr><th>Signo</th><th>Valor</th></tr>
+                <tr><td>FC</td><td><input type="text"></td></tr>
+                <tr><td>FR</td><td><input type="text"></td></tr>
+                <tr><td>Temp</td><td><input type="text"></td></tr>
+                <tr><td>TAM</td><td><input type="text"></td></tr>
+            </table>
+        </div>
+        <div class="section" style="flex: 1;">
+            <h3>Se entrega</h3>
+            <table>
+                <tr><th>Signo</th><th>Valor</th></tr>
+                <tr><td>FC</td><td><input type="text"></td></tr>
+                <tr><td>FR</td><td><input type="text"></td></tr>
+                <tr><td>Temp</td><td><input type="text"></td></tr>
+                <tr><td>TAM</td><td><input type="text"></td></tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>MNB</h3>
+        <textarea placeholder="Detalles de Nutrición..."></textarea>
+    </div>
+
+    <button onclick="alert('Registro guardado')">Guardar Registro</button>
+
+</body>
+</html>
